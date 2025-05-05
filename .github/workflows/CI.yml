@@ -108,7 +108,7 @@ jobs:
           mkdir -p build
           cmake \
             -B build \
-            -S $PWD \
+            -S . \
             -DBUILD_VERSION="${build_version}" \
             -DFORMULA_VERSION="${version}" \
             -DGITHUB_BRANCH="${branch}" \
@@ -176,11 +176,13 @@ jobs:
             --exclude-throw-branches \
             --exclude-unreachable-branches \
             --gcov-ignore-errors=source_not_found \
+            --gcov-keep \
             --filter src/ \
             --verbose \
             --xml-pretty \
             -o ${{ github.workspace }}/build/coverage.xml
 
+          cat audio.cpp##e024cc6165ab55909e22cef34fcf764c.gcov
       - name: Upload coverage
         # any except canceled or skipped
         if: >-
