@@ -45,8 +45,6 @@ jobs:
             os_name: "macos"
           - os_version: "latest"
             os_name: "ubuntu"
-          - os_version: "latest"  # this job will only configure the formula for release, no validation
-            os_name: "ubuntu"
     runs-on: ${{ matrix.os_name }}-${{ matrix.os_version }}
     steps:
       - name: Checkout
