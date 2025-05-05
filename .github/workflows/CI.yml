@@ -179,10 +179,9 @@ jobs:
             --gcov-keep \
             --filter src/ \
             --verbose \
-            --xml-pretty \
-            -o ${{ github.workspace }}/build/coverage.xml
+            -o ${{ github.workspace }}/build/coverage.txt
 
-          cat audio.cpp##e024cc6165ab55909e22cef34fcf764c.gcov
+          cat ${{ github.workspace }}/build/coverage.txt
       - name: Upload coverage
         # any except canceled or skipped
         if: >-
