@@ -108,7 +108,7 @@ jobs:
           mkdir -p build
           cmake \
             -B build \
-            -S . \
+            -S $PWD \
             -DBUILD_VERSION="${build_version}" \
             -DFORMULA_VERSION="${version}" \
             -DGITHUB_BRANCH="${branch}" \
